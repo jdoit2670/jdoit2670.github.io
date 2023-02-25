@@ -5,7 +5,7 @@ function component() {
   const element = document.createElement("div");
 
   // Lodash, now imported by this script
-  element.innerHTML = _.join(["hello", "red"], " ");
+  element.innerHTML = _.join(["hello", "blue"], " ");
   element.classList.add("hello");
 
   return element;

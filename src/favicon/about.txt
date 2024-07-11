@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Zen Kurenaido
+- Font Author: Copyright 2021 The Zen Kurenaido Project Authors (https://github.com/googlefonts/zen-kurenaido)
+- Font Source: https://fonts.gstatic.com/s/zenkurenaido/v16/3XFsEr0515BK2u6UUptu_gWJZfz22PRLd0U.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))

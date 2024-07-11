@@ -5,9 +5,11 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const lightningcss = require("lightningcss");
 const browserslist = require("browserslist");
 const { EsbuildPlugin } = require("esbuild-loader");
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
 module.exports = {
 	mode: "production",
+	devtool: "source-map",
 	entry: ["./src/index.js", "./src/styles.css"],
 	output: {
 		filename: "bundle.js",
@@ -34,9 +36,14 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: "./src/index.html",
+			favicon: "./src/favicon/favicon.ico",
 		}),
 		new MiniCssExtractPlugin({
 			filename: "styles.css",
+		}),
+		new FaviconsWebpackPlugin({
+			logo: "./src/favicon/android-chrome-512x512.png",
+			manifest: "./src/favicon/site.webmanifest",
 		}),
 	],
 	optimization: {

@@ -11,6 +11,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "browserslist": "^4.23.2",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "esbuild-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.6.0",
+    "lightningcss": "^1.25.1",
+    "mini-css-extract-plugin": "^2.9.0",
+    "style-loader": "^4.0.0",
     "webpack": "^5.92.1",
     "webpack-cli": "^5.1.4"
   }

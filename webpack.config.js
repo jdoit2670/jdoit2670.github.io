@@ -6,6 +6,7 @@ const lightningcss = require("lightningcss");
 const browserslist = require("browserslist");
 const { EsbuildPlugin } = require("esbuild-loader");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 module.exports = {
 	mode: "production",
@@ -30,6 +31,11 @@ module.exports = {
 					// JavaScript version to compile to
 					target: "es2015",
 				},
+			},
+			// You need this, if you are using `import file from "file.ext"`, for `new URL(...)` syntax you don't need it
+			{
+				test: /\.(jpe?g|png)$/i,
+				type: "asset",
 			},
 		],
 	},
@@ -57,6 +63,20 @@ module.exports = {
 			}),
 			new EsbuildPlugin({
 				target: "es2015", // Syntax to transpile to (see options below for possible values)
+			}),
+			new ImageMinimizerPlugin({
+				minimizer: {
+					implementation: ImageMinimizerPlugin.sharpMinify,
+					options: {
+						encodeOptions: {
+							// Your options for `sharp`
+							// https://sharp.pixelplumbing.com/api-output
+							png: {
+								quality: 90,
+							},
+						},
+					},
+				},
 			}),
 		],
 	},

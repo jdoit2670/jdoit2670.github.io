@@ -7,6 +7,7 @@ const browserslist = require("browserslist");
 const { EsbuildPlugin } = require("esbuild-loader");
 
 module.exports = {
+	mode: "production",
 	entry: ["./src/index.js", "./src/styles.css"],
 	output: {
 		filename: "bundle.js",
